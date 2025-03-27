@@ -1,12 +1,8 @@
 require 'sinatra'
-require 'date'
-
-def which_day(time)
-  Date::DAYNAMES[time.wday]
-end
+require './day'
 
 get '/' do
-  "hello, broski! Happy #{which_day(Time.now)}"
+  "hello, broski! Happy #{day_of_the_week(Time.now)}"
 end
 
 get '/yolo' do
