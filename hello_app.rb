@@ -1,9 +1,12 @@
 require 'sinatra'
 require 'date'
 
+def which_day(time)
+  Date::DAYNAMES[time.wday]
+end
+
 get '/' do
-  dayname = Date::DAYNAMES[Time.now.wday]
-  "hello, broski! Happy #{dayname}"
+  "hello, broski! Happy #{which_day(Time.now)}"
 end
 
 get '/yolo' do
